@@ -1,15 +1,26 @@
+const { question } = require("readline-sync");
+
 function getConvertedNumber(a) {
   return a.toString(16);
 }
 
-const rValue = Math.floor(Math.random() * 255);
+let isCompleted = false;
+const hexColorCodeInput = parseInt(question("Enter a Number: "));
 
-const rPos = getConvertedNumber(parseInt(rValue));
+while (!isCompleted) {
+  // const rValue = Math.floor(Math.random() * 255);
 
-console.log("--------------------------------");
-console.log(`Hex: #${rPos}${rPos}${rPos}`);
-console.log("--------------------------------");
+  const rPos = getConvertedNumber(hexColorCodeInput);
 
-console.log(`R: ${rValue}`);
-console.log(`G: ${rValue}`);
-console.log(`B: ${rValue}`);
+  if (!isCompleted) {
+    console.log("--------------------------------");
+    console.log(`Hex: #${rPos}${rPos}${rPos}`);
+    console.log("--------------------------------");
+
+    console.log(`R: ${hexColorCodeInput}`);
+    console.log(`G: ${hexColorCodeInput}`);
+    console.log(`B: ${hexColorCodeInput}`);
+
+    isCompleted = true;
+  }
+}
